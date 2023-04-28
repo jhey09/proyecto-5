@@ -1,18 +1,22 @@
 import React from 'react'
 import IndexLayout from './components/layouts'
 import './App.css'
+import Footer from './components/layouts/Footer'
+import Content from './components/Content'
 
 const App = () => {
 
   const content = (
     <div>
-      <h1>Inicio</h1>
+      <Content />
+      <Footer />
     </div>
   )
 
 
   return (
     <IndexLayout render={content} />
+    
   )
 }
 

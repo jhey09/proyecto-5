@@ -9,8 +9,8 @@ const Loginuser = () => {
   const [loginUser, setLoginUser] = useState()
   const { userData, setUserData } = useContext(UserContext)
 
-  const url = 'https://back-ecommerce-7jkl.vercel.app/api/v1/auth/login'
-  const url2 = 'https://back-ecommerce-7jkl.vercel.app/api/v1/users/me'
+  const url = 'http://localhost:4002/api/v1/auth/login'
+  const url2 = 'http://localhost:4002/api/v1/user/me'
   const navigation = useNavigate()
 
   const handleSubmit = async () => {
@@ -50,7 +50,7 @@ const Loginuser = () => {
 
   return (
     <body className='bodyform'>
-      <div className="containersign">
+      <div className="containerform">
         <div className="login">
         <form action="" className='form'> <h2> LOGIN</h2>
           <div className="input-box">

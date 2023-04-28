@@ -1,30 +1,31 @@
 
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useContext } from 'react'
 import "./signup.css"
 
 const FormUser = () => {
-     const [userData,setData] = useState()
+  const {userData, setUserData} = useContext(UserContext)
 
      const saveUser = async() =>{
-      const url = 'http://localhost:4000/api/v1/register'
+      const url = 'http://localhost:4002//api/v1/register'
       const result = await axios.post(url, userData)
       console.log(result)
      }
     
      const handleChange = (e) =>{
       const {name, value} = e.target
-      setData({
+      setUserData({
         ...userData,
         [name]: value
       })
-      console.log(setData)
+      console.log(userData)
      }
 
 
   return (
       <body className='bodyform'>
-      <div className="container">
+      <div className="containerform">
         <div className="content"> <h2>¡BIENVENIDOS!</h2>
         <i className='bx bxl-github'></i>
         </div>

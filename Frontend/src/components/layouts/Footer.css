@@ -1,0 +1,15 @@
+li i {
+    margin: 14px;
+}
+
+.containerFooter{ background-color: black;
+    color: white;
+    padding: 30px;
+
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}

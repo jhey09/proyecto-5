@@ -7,7 +7,7 @@
     padding: 1%;
     }
     
-    .container{
+    .containerform{
         background-color: white;
         height: 550px;
         width: 1200px;
@@ -16,7 +16,7 @@
     
     }
     
-    .container .content{
+    .containerform .content{
         background: #020410;
         width: 50%;
         height: 100%;
@@ -28,21 +28,21 @@
         flex-direction: column;
     }
     
-    .container .content .bxl-github{
+    .containerform .content .bxl-github{
        font-size: 40px;
     }
     
-    .container .login {
+    .containerform .login {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80%;
+        width: 100%;
         height: 100%;
         background: #020410;
         color: white;
     
     }
-    .container .login .form {
+    .containerform .login .form {
         font-size: 16px;
     }
     
@@ -105,7 +105,7 @@
     
     }
     
-    .containersign{
+    .containerform{
          color:  white;
          margin: 40px;
     }

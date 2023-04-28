@@ -8,7 +8,7 @@ const FormUser = () => {
   const {userData, setUserData} = useContext(UserContext)
 
      const saveUser = async() =>{
-      const url = 'http://localhost:4002//api/v1/register'
+      const url = 'http://localhost:4000/api/v1/register'
       const result = await axios.post(url, userData)
       console.log(result)
      }

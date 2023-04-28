@@ -9,9 +9,9 @@ const UserService = new userService(userModel)
 const PasswordService = new passwordService(UserService)
 
 router.put('/', async(req,res)=>{
-    const {email,password, newPassword} = req.body
+    const {email, password, newPassword} = req.body
     try{
-        await PasswordService.change(email,password,newPassword)
+        await PasswordService.change(email, password, newPassword)
         res.send({
             message: "Contraseña Actualizada"
         })
@@ -20,7 +20,10 @@ router.put('/', async(req,res)=>{
         return res.send({
             message: "No se actualizo correctamente la contraseña"
         })
+        
+        
     }
+    console.log(err)
 })
 
 module.exports = router

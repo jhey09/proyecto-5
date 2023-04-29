@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useContext } from 'react'
 import "./signup.css"
+import { UserContext } from '../context/UserContext'
 
 const FormUser = () => {
   const {userData, setUserData} = useContext(UserContext)
@@ -22,9 +23,15 @@ const FormUser = () => {
       console.log(userData)
      }
 
+     useEffect(() => {
+      if (Object.keys(userData).length !== 0) {
+        navigation('/login')
+      }
+    }, []);
+
 
   return (
-      <body className='bodyform'>
+      <div className='bodyform'>
       <div className="containerform">
         <div className="content"> <h2>¡BIENVENIDOS!</h2>
         <i className='bx bxl-github'></i>
@@ -57,7 +64,7 @@ const FormUser = () => {
         
         </div>
       </div>
-    </body>
+    </div>
   )
 }
 

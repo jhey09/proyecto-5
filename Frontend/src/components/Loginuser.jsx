@@ -6,67 +6,63 @@ import { UserContext } from '../context/UserContext'
 import "./signup.css"
 
 const Loginuser = () => {
-  const [loginUser, setLoginUser] = useState()
-  const { userData, setUserData } = useContext(UserContext)
+  const [userData, setUserData] = useState({})
 
-  const url = 'http://localhost:4002/api/v1/auth/login'
-  const url2 = 'http://localhost:4002/api/v1/user/me'
+  const url = 'http://localhost:4000/api/v1/auth/login'
+  const url2 = 'http://localhost:4000/api/v1/users/me'
   const navigation = useNavigate()
 
-  const handleSubmit = async () => {
-    console.log(loginUser)
-    axios.post(url, loginUser)
-      .then(res => {
+    const handleSubmit = ()=>{
+     console.log(userData)
+
+     axios.post( url, userData)
+     .then(res=>{
         console.log(res.data)
-        return (
-          axios.get(url2, {
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-              Authorization: `Bearer ${res.data.token}`
-            }
-          }).then(response => {
-            console.log(response.data)
-            setUserData(response.data)
-            navigation('/profile')
-          })
+        return(
+            axios.get(url2,{
+                headers:{
+                    'Access-Control-Allow-Origin': '*',
+                    Authorization : `Bearer ${res.data.token}`
+                }
+            }).then( response =>{
+                console.log(response.data)
+                setUserData(response.data)
+                navigation('/profile')
+            })
         )
-      })
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setLoginUser({
-      ...loginUser,
-      [name]: value
-    })
-    console.log(loginUser)
-  }
-
-  useEffect(() => {
-    if (Object.keys(userData).length !== 0) {
-      navigation('/profile')
+     })
     }
-  }, []);
+
+    const handleChange = (e) =>{
+       const {name, value} = e.target
+      setUserData({
+        ...userData,
+        [name]: value
+       }) 
+       console.log(userData)
+    }
+
+  
 
   return (
-    <body className='bodyform'>
+    <div className='bodyform'>
       <div className="containerform">
         <div className="login">
         <form action="" className='form'> <h2> LOGIN</h2>
           <div className="input-box">
             <span className='icon'><i className='bx bxl-gmail'></i></span>
-            <input type="email" onChange={handleChange}/> <label> Email</label>
+            <input type="email" name="email" onChange={handleChange}/> <label> Email</label>
           </div>
           <div className="input-box">
             <span className='icon'><i className='bx bxs-lock' ></i></span>
-            <input type="password" onChange={handleChange}/> <label> password</label>
+            <input type="password" name="password" onChange={handleChange}/> <label> password</label>
           </div>
           <button type='submit'  className='boton' onClick={()=> handleSubmit()}>Sign up</button>
         </form>
         
         </div>
       </div>
-    </body>
+    </div>
   )
 }
 

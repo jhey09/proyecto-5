@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
     const userRole = {
       ...user,
       role: 'admin',
-      // 'users:me' es la ruta que tenemos que acceder
+
       permissions: ['users:me']
     }
     const token = jwt.sign({

@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './styles.css'
+import axios from 'axios';
 
 
 const Content = () => { 
@@ -18,11 +19,8 @@ const Content = () => {
   }
 
   const handleClick= () => {
-    if (isLoggedIn) {
       navigation('/checkout');
-    } else {
-      navigation('/register');
-    }
+    
   }
 
   useEffect(()=>{
@@ -47,9 +45,11 @@ const Content = () => {
 	<h2 className='titulos'>Nuestros productos</h2>
 	
   {
-            products.map((pr, i) => (
-  <CardGroup>
-      <Card>
+            products.map((pr) => (
+
+      
+  <CardGroup >
+      <Card key={pr.id}>
         <Card.Img variant="top4" src="https://suplementosolimpicos.com/wp-content/uploads/2022/07/Fondos-productos-SOG-04.jpg" />
         <Card.Body>
           <Card.Title>{pr.name}</Card.Title>
@@ -60,7 +60,7 @@ const Content = () => {
         </Card.Body>
         <Button variant="primary" onClick={handleClick}>Agg al carrito</Button>
       </Card>
-      <Card>
+      <Card key={pr.id}>
         <Card.Img variant="top4" src="https://thumbs.dreamstime.com/b/kiev-ucrania-de-noviembre-frasco-pl%C3%A1stico-con-prote%C3%ADna-soluble-nutrici%C3%B3n-%C3%B3ptima-patr%C3%B3n-oro-suero-sobre-fondo-negro-164085285.jpg" />
         <Card.Body>
           <Card.Title>{pr.name}</Card.Title>
@@ -72,7 +72,7 @@ const Content = () => {
         </Card.Body>
        
       </Card>
-      <Card>
+      <Card key={pr.id}>
         <Card.Img variant="top4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfdWJawkkGvAcFm1GUeXlb4EFehr2L2hzyxw&usqp=CAU" />
         <Card.Body>
           <Card.Title>{pr.name}</Card.Title>

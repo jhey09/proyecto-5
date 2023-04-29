@@ -12,7 +12,7 @@ const IndexLayout = ({ render }) => {
     <>
       <Navbar bg={theme} variant={theme}>
         <Container>
-          <Navbar.Brand href="#home">Arlequin Shop</Navbar.Brand>
+          <Navbar.Brand href="#home">TIENDA Fitness</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             {!userData &&

@@ -24,34 +24,31 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <LoginProvider><Loginuser /></LoginProvider>,
+    element: <Loginuser />,
   },
   {
     path: '/profile',
-    element: <Profile />,
+    element: <UserProvider><Profile /></UserProvider>
   },
   {
     path: '/checkout',
-    element: <UserProvider> 
-      <PayPalScriptProvider
-      options={{
-      "client-id": "AVkid-Ho2DEUjJBL75nQFEGmYNRaKrNnv4QaR5K5dFkJtRm2IjtgUwapwLsqhZy1nvCxLmuggSz9p2gk", components: "buttons",
-      currency: "USD"
-    }}>
-      <CheckoutPage />
-      </PayPalScriptProvider>
-    </UserProvider>   
+    element: <CheckoutPage />,
+       
   }
-
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    
+    <PayPalScriptProvider
+      options={{
+      "client-id": "AVkid-Ho2DEUjJBL75nQFEGmYNRaKrNnv4QaR5K5dFkJtRm2IjtgUwapwLsqhZy1nvCxLmuggSz9p2gk", components: "buttons",
+      currency: "USD"
+    }}>
     <UserProvider>
       <ThemeProvider>
         <RouterProvider router={router} />
       </ThemeProvider>
     </UserProvider>
+    </PayPalScriptProvider>
   </React.StrictMode>,
 )

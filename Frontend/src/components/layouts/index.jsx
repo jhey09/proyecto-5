@@ -7,12 +7,19 @@ import { useNavigate } from 'react-router-dom';
 const IndexLayout = ({ render }) => {
   console.log(render)
   const { theme, toggleTheme } = useContext(ThemeContext)
-  const { userData } = useContext(UserContext)
+  const { userData, logout } = useContext(UserContext)
+  const navigation = useNavigate()
+
+  const handleLogout = () =>{
+    logout()
+    navigation('/')
+  }
+
   return (
     <>
       <Navbar bg={theme} variant={theme}>
         <Container>
-          <Navbar.Brand href="#home">TIENDA Fitness</Navbar.Brand>
+          <Navbar.Brand href="/">TIENDA Fitness</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             {!userData &&
@@ -21,10 +28,15 @@ const IndexLayout = ({ render }) => {
             {!userData &&
               <Nav.Link href="/login">Iniciar sesion</Nav.Link>
             }
+             {
+              userData &&
+              <Nav.Link onClick={handleLogout} >cerrar sesion</Nav.Link>
+            },
             {
               userData &&
               <Nav.Link href="/profile">{userData.username}</Nav.Link>
             }
+           
             <Nav.Link href="/checkout">Checkout</Nav.Link>
           </Nav>
           <Form>

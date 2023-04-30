@@ -1,12 +1,14 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useContext } from 'react'
 import "./signup.css"
 import { UserContext } from '../context/UserContext'
+import { useNavigate } from 'react-router-dom'
+
 
 const FormUser = () => {
-  const {userData, setUserData} = useContext(UserContext)
+     const [userData,setData] = useState()
 
      const saveUser = async() =>{
       const url = 'http://localhost:4000/api/v1/register'
@@ -16,18 +18,13 @@ const FormUser = () => {
     
      const handleChange = (e) =>{
       const {name, value} = e.target
-      setUserData({
+      setData({
         ...userData,
         [name]: value
       })
-      console.log(userData)
+      console.log(setData)
      }
 
-     useEffect(() => {
-      if (Object.keys(userData).length !== 0) {
-        navigation('/login')
-      }
-    }, []);
 
 
   return (
@@ -60,6 +57,8 @@ const FormUser = () => {
             <input type="password"  name='password' onChange={handleChange}/> <label> password</label>
           </div>
           <button className='boton' onClick={()=> saveUser()}>Enviar</button>
+          <a href="/login">login</a>
+
         </form>
         
         </div>

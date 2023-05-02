@@ -9,8 +9,8 @@ const Loginuser = () => {
   const [loginUser, setLoginUser] = useState()
   const { userData, saveUser } = useContext(UserContext)
 
-  const url = 'http://localhost:4000/api/v1/auth/login'
-  const url2 = 'http://localhost:4000/api/v1/users/me'
+  const url = 'https://proyecto-5-wheat.vercel.app/api/v1/auth/login'
+  const url2 = 'https://proyecto-5-wheat.vercel.app/api/v1/users/me'
   const navigation = useNavigate()
 
   const handleSubmit = async () => {
@@ -27,7 +27,7 @@ const Loginuser = () => {
           }).then(response => {
             console.log(response.data)
             saveUser(response.data)
-            navigation('/profile')
+            
           })
         )
       })
@@ -42,7 +42,7 @@ const Loginuser = () => {
     console.log(loginUser)
   }
   useEffect(() => {
-    console.log('pokemon', userData)
+    
     if (userData) {
       navigation('/profile')
     }

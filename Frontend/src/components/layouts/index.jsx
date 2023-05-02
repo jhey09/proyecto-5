@@ -6,14 +6,11 @@ import { useNavigate } from 'react-router-dom';
 
 const IndexLayout = ({ render }) => {
   console.log(render)
-  const { theme, toggleTheme } = useContext(ThemeContext)
-  const { userData, logout } = useContext(UserContext)
+  const { theme, toggleTheme, logout } = useContext(ThemeContext)
+  const { userData } = useContext(UserContext)
   const navigation = useNavigate()
 
-  const handleLogout = () =>{
-    logout()
-    navigation('/')
-  }
+  
 
   return (
     <>
@@ -30,7 +27,7 @@ const IndexLayout = ({ render }) => {
             }
              {
               userData &&
-              <Nav.Link onClick={handleLogout} >cerrar sesion</Nav.Link>
+              <Nav.Link onClick={logout} >cerrar sesion</Nav.Link>
             },
             {
               userData &&

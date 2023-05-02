@@ -9,11 +9,10 @@ import axios from 'axios';
 
 const Content = () => { 
   const [products, setProducts] = useState([])
-  const [login, setlogin] = useState(false);
   const navigation = useNavigate()
 
   const getProducts = async() =>{
-    const url ='http://localhost:4000/api/v1/products'
+    const url ='https://proyecto-5-wheat.vercel.app/api/v1/products'
     const productos = await axios.get(url)
     setProducts(productos.data)
   }

@@ -7,6 +7,7 @@ import './styles.css'
 import Content from './Content'
 
 const Profile = () => {
+
   const content = <div>
 
 </div>;

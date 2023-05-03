@@ -1,17 +1,16 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
-import { useContext } from 'react'
+
 import "./signup.css"
-import { UserContext } from '../context/UserContext'
-import { useNavigate } from 'react-router-dom'
+
 
 
 const FormUser = () => {
      const [userData,setData] = useState()
 
      const saveUser = async() =>{
-      const url = 'https://proyecto-5-wheat.vercel.app/api/v1/register'
+      const url = 'http://localhost:4000/api/v1/register'
       const result = await axios.post(url, userData)
       console.log(result)
      }

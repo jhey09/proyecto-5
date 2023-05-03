@@ -12,7 +12,7 @@ const Content = () => {
   const navigation = useNavigate()
 
   const getProducts = async() =>{
-    const url ='https://proyecto-5-wheat.vercel.app/api/v1/products'
+    const url ='http://localhost:4000/api/v1/products'
     const productos = await axios.get(url)
     setProducts(productos.data)
   }
@@ -22,7 +22,7 @@ const Content = () => {
     
   }
 
-  useEffect(()=>{
+  useEffect(()=>{ 
     getProducts()
    },[]);
   

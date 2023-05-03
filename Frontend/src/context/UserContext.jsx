@@ -8,8 +8,7 @@ const UserProvider = ({ children }) => {
   const [userData, setUserData] = useState({})
 
   const logout = () => {
-    setUserData({})
-    localStorage.setItem('user', '{}')
+    setUserData(null)
     }
 
   const getUserData = () => {

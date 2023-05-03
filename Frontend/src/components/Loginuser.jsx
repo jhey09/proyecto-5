@@ -4,13 +4,13 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 import "./signup.css"
+import { LoginContext } from '../context/LoginContext'
 
 const Loginuser = () => {
-  const [loginUser, setLoginUser] = useState()
-  const { userData, saveUser } = useContext(UserContext)
+  const { loginUser, setLoginUser } = useContext(LoginContext)
 
-  const url = 'https://proyecto-5-wheat.vercel.app/api/v1/auth/login'
-  const url2 = 'https://proyecto-5-wheat.vercel.app/api/v1/users/me'
+  const url = 'http://localhost:4000/api/v1/auth/login'
+  const url2 = 'http://localhost:4000/api/v1/users/me'
   const navigation = useNavigate()
 
   const handleSubmit = async () => {
@@ -25,8 +25,8 @@ const Loginuser = () => {
               Authorization: `Bearer ${res.data.token}`
             }
           }).then(response => {
-            console.log(response.data)
-            saveUser(response.data)
+            console.log('segundo paso', response.data)
+            navigation('/profile')
             
           })
         )
@@ -41,12 +41,6 @@ const Loginuser = () => {
     })
     console.log(loginUser)
   }
-  useEffect(() => {
-    
-    if (userData) {
-      navigation('/profile')
-    }
-  }, []);
 
   
   return (

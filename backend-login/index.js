@@ -4,10 +4,8 @@ require('dotenv').config()
 const cors = require('cors')
 require('./db/mongodb')
 const apirRouter = require('./apis')
-
-app.use(express.json())
-
 app.use(cors())
+app.use(express.json())
 
 
 app.use('/api/v1', apirRouter)

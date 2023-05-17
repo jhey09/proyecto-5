@@ -33,13 +33,14 @@ const Content = () => {
 
   <h1 className='titulos'>Suplementos para el Gimnasio</h1>
   <div className='marketing'>
-  <h4>
-  "¿Quieres llevar tus entrenamientos al siguiente nivel?
-  <br /> <br /> <br />
-   En nuestra tienda de suplementos para el gimnasio, ofrecemos los mejores productos para ayudarte a alcanzar tus objetivos de fitness. <br /> <br /> <br />
-    Desde creatina para aumentar tu fuerza y resistencia, hasta proteína whey para recuperar tus músculos después de un entrenamiento intenso, nuestros suplementos son los aliados perfectos para tu rutina de ejercicio. 
-  </h4>
   <Card.Img variant="top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cbum-1669971164.jpeg/" />
+  <div className="text-container">
+    <h1>"¿Quieres llevar tus entrenamientos al siguiente nivel?</h1>
+    <h4>
+  
+   En nuestra tienda de suplementos para el gimnasio, ofrecemos los mejores productos para ayudarte a alcanzar tus objetivos de fitness. <br /> <br /> 
+    <p>Desde creatina para aumentar tu fuerza y resistencia, hasta proteína whey para recuperar tus músculos después de un entrenamiento intenso, nuestros suplementos son los aliados perfectos para tu rutina de ejercicio.</p> 
+  </h4></div>
   </div>
 	<h2 className='titulos'>Nuestros productos</h2>
 	

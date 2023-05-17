@@ -56,7 +56,7 @@ const FormUser = () => {
             <input type="password"  name='password' onChange={handleChange}/> <label> password</label>
           </div>
           <button className='boton' onClick={()=> saveUser()}>Enviar</button>
-          <a href="/login">login</a>
+          <a  className='linklogin' href="/login">login</a>
 
         </form>
         

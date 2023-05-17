@@ -3,6 +3,7 @@ import { Navbar, Container, Nav, Form } from 'react-bootstrap'
 import { ThemeContext } from '../../context/ThemeContext';
 import { UserContext } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
+import './Navbar_Footer.css'
 
 const IndexLayout = ({ render }) => {
   console.log(render)

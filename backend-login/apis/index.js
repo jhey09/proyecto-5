@@ -11,7 +11,7 @@ const productRouter = require('./product')
 router.use('/products', productRouter)
 
 const passwordRouter = require('./Newpassword')
-router.use('/changeps', passwordRouter)
+router.use('/changePassword', passwordRouter)
 
 router.use('/auth', authRouter)
 router.use('/register', registerRouter)

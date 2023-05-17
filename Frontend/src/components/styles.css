@@ -1,19 +1,26 @@
 .marketing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     background-color: black;
     border-radius: 3%;
+    height: 600px;
     color: white;
-    padding: 2%;
-    margin: 2%;
+    padding: 1%;
+    margin: 1%;
     font-family: 'Vina Sans', 'Arial Narrow', Arial, sans-serif;
 
 }
 @media only screen and (max-width: 852px) {
     .marketing{
         display: block;
+        font-size: 14px;
 
+    }
+      
+    .text-container{
+        display: block;
+        align-items: center;
+
+    
     }
 }
 .conten {
@@ -23,18 +30,43 @@
 }
 .titulos {
     font-family: 'Vina Sans', 'Arial Narrow', Arial, sans-serif;
-    margin: 2%
+    margin: 1%
 }
 
-
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 95%;
+    height: 95%;
+  }
+  
 .card-img-top {
-    width: 2000px;
-    height: 500px;
+    display: block;
+    width: 95%;
+    height: 550px;
+    padding: 1%;
     border-radius: 3%;
+    opacity: 0.4;
     
 }
+
+
 
 .card-img-top4{
     width: 450px;
     height: 500px;
 }
+.text-container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+    transform: translate(-50%, -40%);
+    color: #fff;
+    padding: 1px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .text-container h4{
+    font-size: 22px;
+  }
